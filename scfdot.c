@@ -273,8 +273,12 @@ static void
 clean_name(char *name)
 {
 	for (; *name != '\0'; ++name) {
-		if (*name == '-')
+		switch (*name) {
+		case '-':
+		case '/':
 			*name = '_';
+			break;
+		}
 	}
 }
 
