@@ -4,7 +4,7 @@ The [Service Management Facility (SMF)](https://en.wikipedia.org/wiki/Service_Ma
 and service start order in the [Oracle Solaris operating system](https://en.wikipedia.org/wiki/Oracle_Solaris). 
 Run `"man smf"` for more information. `scfdot` reads the service names and
 dependencies from the Service Configuration Facility (SCF) repository
-and writes a file which the dot program from the graphviz package can
+and writes a file which the `dot` program from the [graphviz](https://graphviz.org/) package can
 render into a graph.
 
 This is how the output looks like for Solaris 11.4 SRU:
