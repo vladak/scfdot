@@ -13,14 +13,14 @@ running
 ```
 	$ make
 ```
-This will compile `scfdot.c`, execute it, and execute dot to produce
+This will compile `scfdot.c`, execute it, and execute `dot` to produce
 `$HOSTNAME.ps`.  If `dot` is not on your path, then modify `Makefile` to indicate
 how to invoke dot.  If `cc` is not available, add a line to Makefile which sets
 CC to how to invoke your compiler.
 
 To view the graph with `gv`, I recommend
 
-  - The -noantialias option.  Otherwise the black labels on the colored
+  - The `-noantialias` option.  Otherwise the black labels on the colored
     backgrounds look bad.
 
   - Adding a 1/100 zoom option to `gv` and using that for the initial view.
