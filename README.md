@@ -52,7 +52,7 @@ The Makefile also has options for changing the command line arguments to
 scfdot.  See the comment at the top of `scfdot.c` for available options.
 
 The files in this package are:
-  - `README` - This file.
+  - `README.md` - This file.
   - `AUTHORS` - Author credits.
   - `CDDL.LICENSE` - License.
   - `Makefile` - Makefile for building scfdot, running it, running the
