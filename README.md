@@ -1,8 +1,8 @@
 # scfdot - Generate a graphviz file of SMF services and dependencies
 
-The Service Management Facility (SMF) is responsible for managing services
-and service start order in the Oracle Solaris operating system. Run
-"man smf" for more information. scfdot reads the service names and
+The [Service Management Facility (SMF)](https://en.wikipedia.org/wiki/Service_Management_Facility) is responsible for managing services
+and service start order in the [Oracle Solaris operating system](https://en.wikipedia.org/wiki/Oracle_Solaris). 
+Run `"man smf"` for more information. `scfdot` reads the service names and
 dependencies from the Service Configuration Facility (SCF) repository
 and writes a file which the dot program from the graphviz package can
 render into a graph.
