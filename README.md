@@ -1,4 +1,4 @@
-scfdot - Generate a graphviz file of SMF services and dependencies
+# scfdot - Generate a graphviz file of SMF services and dependencies
 
 The Service Management Facility (SMF) is responsible for managing services
 and service start order in the Oracle Solaris operating system. Run
@@ -7,26 +7,26 @@ dependencies from the Service Configuration Facility (SCF) repository
 and writes a file which the dot program from the graphviz package can
 render into a graph.
 
-Once graphviz is installed and dot and cc are on your path, you should be able
+Once graphviz is installed and `dot` and `cc` are on your path, you should be able
 to generate a PostScript file of the dependency graph on your system by
 running
-
+```
 	$ make
-
-This will compile scfdot.c, execute it, and execute dot to produce
-$HOSTNAME.ps.  If dot is not on your path, then modify Makefile to indicate
-how to invoke dot.  If cc is not available, add a line to Makefile which sets
+```
+This will compile `scfdot.c`, execute it, and execute dot to produce
+`$HOSTNAME.ps`.  If `dot` is not on your path, then modify `Makefile` to indicate
+how to invoke dot.  If `cc` is not available, add a line to Makefile which sets
 CC to how to invoke your compiler.
 
-To view the graph with gv, I recommend
+To view the graph with `gv`, I recommend
 
   - The -noantialias option.  Otherwise the black labels on the colored
     backgrounds look bad.
 
-  - Adding a 1/100 zoom option to gv and using that for the initial view.
+  - Adding a 1/100 zoom option to `gv` and using that for the initial view.
     Otherwise gv will ask your X server for a ton of memory, which can cause
     it to thrash.  Add the option by putting
-
+```
 GV.scales:              Natural size,   1.000,  screen  \n\
                         Pixel based,    1.000,  pixel   \n\
 			0.010,		0.010		\n\
@@ -41,30 +41,23 @@ GV.scales:              Natural size,   1.000,  screen  \n\
                         4.000,          4.000           \n\
                         8.000,          8.000           \n\
                         10.00,          10.00
-
-    in ~/.gv .  Make it the initial view by including "-scale -6" in the
+```
+    in `~/.gv`.  Make it the initial view by including `-scale -6` in the
     command line.
 
 The Makefile also has options for changing the command line arguments to
-scfdot.  See the comment at the top of scfdot.c for available options.
+scfdot.  See the comment at the top of `scfdot.c` for available options.
 
-The files in this package are
-
-	README - This file.
-
-	AUTHORS - Author credits.
-
-	CDDL.LICENSE - License.
-
-	Makefile - Makefile for building scfdot, running it, running the
+The files in this package are:
+  - `README` - This file.
+  - `AUTHORS` - Author credits.
+  - `CDDL.LICENSE` - License.
+  - `Makefile` - Makefile for building scfdot, running it, running the
 		   scripts, and running dot to produce a PostScript file of
 		   the dependency graph.
-
-	scfdot.c - C program which generates dot files.
-
-	enlarge.awk - awk script which enlarges PostScript files.  Used to
+  - `scfdot.c` - C program which generates dot files.
+  - `enlarge.awk` - awk script which enlarges PostScript files.  Used to
 		      make a legend for the graph.
-
-	setpage.awk - awk script which adds commands to a PostScript file
+  - `setpage.awk` - awk script which adds commands to a PostScript file
 		      which direct an HP DesignJet 800ps plotter to print the
 		      file in one continuous page.
